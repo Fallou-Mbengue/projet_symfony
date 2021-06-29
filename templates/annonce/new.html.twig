@@ -1,0 +1,33 @@
+{% extends "base.html.twig" %}
+
+{% block title %}creattion de nouveaux annonce
+{% endblock %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+{% block body %}
+	<!-- ======= Hero Section ======= -->
+	<section id="hero" class="d-flex flex-column justify-content-end align-items-center">
+		<div
+			id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
+
+			<!-- Slide 1 -->
+			<div class="carousel-item active mt-5">
+				<div class="carousel-container">
+					<h2 class="animate__animated animate__fadeInDown">
+						Création De Nouveaux Annonce
+					</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Hero -->
+	<div class="container d-flex justify-content-center intro-single mt-5 mb-5">
+		<div class="card col-7">
+			<div class="card-header text-center">
+				<h3>Nouveaux Annonce</h3>
+			</div>
+			{{ form(form) }}
+			</div>
+		</div>
+
+	{% endblock %}

@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AnnonceController!
+{% endblock %}
+
+{% block body %}
+
+	<!-- ======= Hero Section ======= -->
+	<section id="hero" class="d-flex flex-column justify-content-end align-items-center">
+		<div
+			id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
+
+			<!-- Slide 1 -->
+			<div class="carousel-item active mt-5">
+				<div class="carousel-container">
+					<h2 class="animate__animated animate__fadeInDown">
+						Information Des Annonces
+					</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Hero -->
+
+	<div class="row" style="margin-left:60px; margin-top: 50px">
+		{% for annonce in annonces %}
+			<div class="card mb-3" style="width: 23rem; margin-left: 20px">
+				<h3 class="card-header">
+					<font style="vertical-align: inherit;">
+						<font style="vertical-align: inherit;"></font>
+					</font>
+				</h3>
+				<div class="card-body">
+					<h5 class="card-title">
+						<font style="vertical-align: inherit;">
+							<font style="vertical-align: inherit;"> {{annonce.title}}</font>
+						</font>
+					</h5>
+					<h6 class="card-subtitle text-muted">
+						<font style="vertical-align: inherit;">
+							<font style="vertical-align: inherit;"> {{annonce.slug}}</font>
+						</font>
+					</h6>
+				</div>
+				<img src={{annonce.image}} class="card-img-top" alt="...">
+				<div class="card-body">
+					<p class="card-text">
+						<font style="vertical-align: inherit;">
+							<font style="vertical-align: inherit;"> {{annonce.description|slice(0, 30)}}</font>
+						</font>
+					</p>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item">
+							<font style="vertical-align: inherit;">
+								<font style="vertical-align: inherit;"> {{annonce.price}} Fcfa</font>
+							</font>
+						</li>
+						<li class="list-group-item">
+							<font style="vertical-align: inherit;">
+								<font style="vertical-align: inherit;"> {{annonce.adress}}</font>
+							</font>
+						</li>
+						<li class="list-group-item">
+							<font style="vertical-align: inherit;">
+								<font style="vertical-align: inherit;"></font>
+							</font>
+						</li>
+					</ul>
+					<a href="view/{{annonce.id}}"> Voir Détail </a>
+				</div>
+
+			</div>
+		{% endfor %}
+
+	</div>
+
+{% endblock %}

@@ -1,0 +1,191 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AnnonceController!
+{% endblock %}
+
+{% block body %}
+
+	<!-- ======= Hero Section ======= -->
+	<section id="hero" class="d-flex flex-column justify-content-end align-items-center">
+		<div
+			id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
+
+			<!-- Slide 1 -->
+			<div class="carousel-item active mt-5">
+				<div class="carousel-container">
+					<h2 class="animate__animated animate__fadeInDown">
+						Détail Annonce
+					</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Hero -->
+	<!-- ======= Blog Single Section ======= -->
+	<section id="blog" class="blog">
+		<div class="container" data-aos="fade-up">
+
+			<div class="row">
+
+				<div class="col-lg-8 entries">
+
+					<article class="entry entry-single">
+
+						<div class="entry-img">
+							<img src="https://www.1000-annonces.com/appartement-a-vendre-a-dakar-plateau-WBPL1581092179_img20200207wa0258.webp" alt="" class="img-fluid">
+						</div>
+
+						<h2 class="entry-title">
+							<font style="vertical-align: inherit;">
+								{{annonce.title}}</font>
+						</h2>
+
+						<div class="entry-content">
+							<font style="vertical-align: inherit;">
+								{{annonce.description|slice(0, 500)}}</font>
+						</div>
+
+
+					</article>
+					<!-- End blog entry -->
+			<section>
+
+				<div class="blog-author d-flex align-items-center">
+							<img src="assets/img/blog/blog-author.jpg" class="rounded-circle float-left" alt="">
+					<div>
+								<h3>Commentaires</h3>
+								{% for comment in annonce.comments %}
+									Auteur:
+									{{comment.autor}}
+								</br>
+								Contenue :
+								{{comment.content}}
+							</br>
+						{% endfor %}
+					</div>
+				</div>
+			</section>
+			<!-- End blog author bio -->
+
+			<div class="blog-comments">
+
+
+				<div id="comment-1" class="comment">
+					<div class="d-flex"></div>
+				</div>
+				<!-- End comment #1 -->
+
+				<div id="comment-2" class="comment">
+					<div class="d-flex">
+						<div class="comment-img"><img src="assets/img/blog/comments-2.jpg" alt=""></div>
+					</div>
+
+					<div id="comment-reply-1" class="comment comment-reply">
+						<div class="d-flex">
+							<div class="comment-img"><img src="assets/img/blog/comments-3.jpg" alt=""></div>
+						</div>
+
+						<div id="comment-reply-2" class="comment comment-reply">
+							<div class="d-flex">
+								<div class="comment-img"><img src="assets/img/blog/comments-4.jpg" alt=""></div>
+							</div>
+
+						</div>
+						<!-- End comment reply #2-->
+
+					</div>
+					<!-- End comment reply #1-->
+
+				</div>
+				<!-- End comment #2-->
+
+
+				<div id="comment-4" class="comment">
+					<div class="d-flex">
+						<div class="comment-img"><img src="assets/img/blog/comments-6.jpg" alt=""></div>
+						<div>
+						</div>
+					</div>
+
+				</div>
+				<!-- End comment #4 -->
+
+				<div class="reply-form">
+					<h4>Pour plus d'information</h4>
+					<p>Your email address will not be published. Required fields are marked *
+					</p>
+					<form action="">
+						<div class="row">
+							<div class="col-md-6 form-group">
+								<input name="name" type="text" class="form-control" placeholder="Nom">
+							</div>
+							<div class="col-md-6 form-group">
+								<input name="email" type="text" class="form-control" placeholder="Prénom">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col form-group">
+								<input name="website" type="text" class="form-control" placeholder="Email">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col form-group">
+								<textarea name="comment" class="form-control" placeholder="Commentaire"></textarea>
+							</div>
+						</div>
+						<button type="submit" class="btn btn-primary">Post Comment</button>
+
+					</form>
+
+				</div>
+
+			</div>
+			<!-- End blog comments -->
+
+		</div>
+		<!-- End blog entries list -->
+
+		<div class="col-lg-4">
+
+			<div class="sidebar">
+
+				<h3 class="sidebar-title">Auteur</h3>
+
+				<h3 class="sidebar-title"></h3>
+				<div class="sidebar-item categories">
+					<ul>
+						<li><a href="#">Nom<span>:</span></a></li>
+						<li><a href="#">Prénom<span>:</span></a></li>
+						<li><a href="#">Adresse<span>:</span></a></li>
+					</ul>
+				</div>
+				<!-- End sidebar categories-->
+
+
+				<div class="post-item clearfix">
+					
+				</div>
+
+				<div class="post-item clearfix">
+				
+				</div>
+
+				<div class="post-item clearfix">
+				
+				</div>
+
+				<div class="post-item clearfix">
+			
+				</div>
+
+			</div>
+			<!-- End sidebar recent posts-->
+
+		</div>
+		<!-- End sidebar -->
+
+	</div>
+	<!-- End blog sidebar -->
+
+</div></div></section><!-- End Blog Single Section -->
+{% endblock %}
