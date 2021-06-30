@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<!-- ======= Hero Section ======= -->
+	<section id="hero" class="d-flex flex-column justify-content-end align-items-center">
+		<div
+			id="heroCarousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
+
+			<!-- Slide 1 -->
+			<div class="carousel-item active mt-5">
+				<div class="carousel-container">
+					<h2 class="animate__animated animate__fadeInDown">
+						Administration Annonces
+					</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End Hero -->
+
+    <div class="container">
+    <div class="row">
+        {% if annonces is not empty %}
+            <table>
+                <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Slug</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Adress</th>
+                    <th>Roms</th>
+                    <th>Delete</th>
+                    <th>Update</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for annonce in annonces %}
+                    <tr>
+                        <td>{{ annonce.title}}</td>
+                        <td>{{ annonce.slug}}</td>
+                        <td>{{ annonce.description | slice(0, 30) }}</td>
+                        <td>{{ annonce.price}}</td>
+                        <td>{{ annonce.adress}}</td>
+                        <td>{{ annonce.roms}}</td>
+                        <td><a href="{{path('delete_annonce',{'id': annonce.id})}}" class="btn btn-danger">Delete</a></td>
+                        <td><a href="{{path('edit_annonce',{'id': annonce.id})}}" class="btn btn-success">Update</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No article found.</p>
+        {% endif %}
+    </div>
+</div>
+
+{% endblock %}

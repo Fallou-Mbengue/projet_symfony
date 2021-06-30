@@ -162,5 +162,18 @@ class AnnonceController extends AbstractController
         //return $this->redirectToRoute('');
 
     }
+
+    /**
+     * @Route("/list", name="annonce_list")
+     */
+    public function listAnnonce()
+    {
+        $annonces = $this->getDoctrine()->getRepository(Annonce::class);
+        $annonces = $annonces->findAll();
+
+        return $this->render('annonce/list.html.twig',
+        array('annonces' => $annonces)
+    );
+    }
     
 }
