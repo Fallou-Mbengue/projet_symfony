@@ -14,6 +14,7 @@ return [
     '_profiler_router' => [['token'], ['_controller' => 'web_profiler.controller.router::panelAction'], [], [['text', '/router'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::body'], [], [['text', '/exception'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
+    'annonce_admin' => [[], ['_controller' => 'App\\Controller\\AnnonceAdminController::index'], [], [['text', '/annonce/admin']], [], []],
     'annonces_index' => [[], ['_controller' => 'App\\Controller\\AnnonceController::index'], [], [['text', '/annonces']], [], []],
     'annonce_view' => [['id'], ['_controller' => 'App\\Controller\\AnnonceController::viewAnnonce'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/view']], [], []],
     'create_annonce' => [[], ['_controller' => 'App\\Controller\\AnnonceController::createAnnonce'], [], [['text', '/annonce/new']], [], []],
