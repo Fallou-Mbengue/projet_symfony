@@ -8,6 +8,7 @@ use App\Repository\CommentRepository;
 use App\Repository\ImageRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -60,29 +61,41 @@ class AnnonceController extends AbstractController
 
         $form = $this->createFormBuilder()
              ->add('title', TextType::class)
-             ->add('slug', TextType::class)
+             ->add('introduction', TextType::class)
              ->add('description', TextareaType::class)
              ->add('price',IntegerType::class)
              ->add('adress', TextType::class)
              ->add('roms', TextType::class)
-             ->add('introduction', TextType::class)
+             ->add('image', FileType::class)
              ->add('save', SubmitType::class, ['label' => 'Creer Annonce'])
              ->getForm();
 
         $form->handleRequest($resquest);
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $coverImage = $form->get('image')->getData();
+
+            if($coverImage)
+            {
+                $imageName = md5(uniqid()) . '.' . $coverImage->guessExtension();
+                
+                $coverImage->move(
+                        $this->getParameter('image_directory'),
+                        $imageName
+                    );
+                
+            }
             
             $data = $form->getData();
             $annonce = new Annonce();
             $annonce->setTitle($data['title']);
-            $annonce->setSlug($data['slug']);
             $annonce->setDescription($data['description']);
             $annonce->setPrice($data['price']);
             $annonce->setAdress($data['adress']);
             $annonce->setIsavailable(mt_rand(0,1));
             $annonce->setIntroduction($data['introduction']);
             $annonce->setRoms($data['roms']);
-            $annonce->setImage('https://picsum.photos/768/400?random=' . mt_rand(1,200));
+            $annonce->setImage($imageName);
             
             $em = $this->getDoctrine()->getManager();
             $em->persist($annonce);
