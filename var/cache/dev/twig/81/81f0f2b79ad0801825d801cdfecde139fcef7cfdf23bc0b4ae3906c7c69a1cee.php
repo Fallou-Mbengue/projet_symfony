@@ -98,7 +98,7 @@ class __TwigTemplate_74eeb7b4758ed38fe2a61c066df9882e9efb76ed40a6ea9c63f10454bc0
 \t\t\t<div class=\"carousel-item active mt-5\">
 \t\t\t\t<div class=\"carousel-container\">
 \t\t\t\t\t<h2 class=\"animate__animated animate__fadeInDown\">
-\t\t\t\t\t\tCréation De Nouveaux Annonce
+\t\t\t\t\t\tCréation De Nouveaux Annonces
 \t\t\t\t\t</h2>
 \t\t\t\t</div>
 \t\t\t</div>
@@ -159,7 +159,7 @@ class __TwigTemplate_74eeb7b4758ed38fe2a61c066df9882e9efb76ed40a6ea9c63f10454bc0
 \t\t\t<div class=\"carousel-item active mt-5\">
 \t\t\t\t<div class=\"carousel-container\">
 \t\t\t\t\t<h2 class=\"animate__animated animate__fadeInDown\">
-\t\t\t\t\t\tCréation De Nouveaux Annonce
+\t\t\t\t\t\tCréation De Nouveaux Annonces
 \t\t\t\t\t</h2>
 \t\t\t\t</div>
 \t\t\t</div>
@@ -176,6 +176,6 @@ class __TwigTemplate_74eeb7b4758ed38fe2a61c066df9882e9efb76ed40a6ea9c63f10454bc0
 \t\t</div>
 
 \t{% endblock %}
-", "annonce/new.html.twig", "/Applications/XAMPP/xamppfiles/htdocs/lab_symfony/templates/annonce/new.html.twig");
+", "annonce/new.html.twig", "/Users/retina/Desktop/git/projet_symfony/templates/annonce/new.html.twig");
     }
 }

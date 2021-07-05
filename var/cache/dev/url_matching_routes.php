@@ -15,6 +15,7 @@ return [
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
         '/annonces' => [[['_route' => 'annonces_index', '_controller' => 'App\\Controller\\AnnonceController::index'], null, null, null, false, false, null]],
         '/annonce/new' => [[['_route' => 'create_annonce', '_controller' => 'App\\Controller\\AnnonceController::createAnnonce'], null, null, null, false, false, null]],
+        '/list' => [[['_route' => 'annonce_list', '_controller' => 'App\\Controller\\AnnonceController::listAnnonce'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/task' => [[['_route' => 'task', '_controller' => 'App\\Controller\\TaskController::new'], null, null, null, false, false, null]],
     ],

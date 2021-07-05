@@ -19,6 +19,7 @@ return [
     'create_annonce' => [[], ['_controller' => 'App\\Controller\\AnnonceController::createAnnonce'], [], [['text', '/annonce/new']], [], []],
     'edit_annonce' => [['id'], ['_controller' => 'App\\Controller\\AnnonceController::editAnnonce'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/edit']], [], []],
     'delete_annonce' => [['id'], ['_controller' => 'App\\Controller\\AnnonceController::deleteAnnonce'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/delete']], [], []],
+    'annonce_list' => [[], ['_controller' => 'App\\Controller\\AnnonceController::listAnnonce'], [], [['text', '/list']], [], []],
     'app_home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], []],
     'task' => [[], ['_controller' => 'App\\Controller\\TaskController::new'], [], [['text', '/task']], [], []],
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], []],
